@@ -4,29 +4,34 @@ This action provides `flutter` for Github Actions.
 
 ## Usage examples
 
+This example first fetches the dependencies with `flutter pub get` and then
+builds an apk and runs the flutter tests in parallel.
+
 ```hcl
-workflow "test app" {
+workflow "build and test app" {
   on = "push"
-  resolves = ["flutter build"]
+  resolves = ["build apk", "run tests"]
 }
 
 # Install dependencies
-action "flutter pub get" {
+action "install dependencies" {
   uses = "steebchen/flutter@master"
   args = "pub get"
 }
 
 # test app
-action "flutter test" {
-  needs = "flutter pub get"
+action "run tests" {
+  needs = "install dependencies"
   uses = "steebchen/flutter@master"
   args = "test"
 }
 
 # Build APK
-action "flutter build" {
-  needs = "flutter test"
+action "build apk" {
+  needs = "install dependencies"
   uses  = "steebchen/flutter@master"
   args  = "build apk --release"
 }
 ```
+
+![github actions preview](./preview.jpg)
