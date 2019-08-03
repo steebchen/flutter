@@ -12,7 +12,6 @@ LABEL com.github.actions.icon="terminal"
 LABEL com.github.actions.color="purple"
 
 COPY LICENSE README.md /
-COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["flutter"]
 CMD ["help"]
