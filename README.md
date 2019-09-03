@@ -12,7 +12,7 @@ builds an apk and runs the flutter tests in parallel.
 on: push
 name: build and test app
 jobs:
-  installDependencies:
+  build:
     name: install dependencies
     runs-on: ubuntu-latest
     steps:
