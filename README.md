@@ -16,8 +16,8 @@ jobs:
     name: install dependencies
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
     - name: install dependencies
+      uses: actions/checkout@master
       uses: steebchen/flutter@master
       with:
         args: pub get
