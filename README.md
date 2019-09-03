@@ -7,31 +7,28 @@ This action provides `flutter` for Github Actions.
 This example first fetches the dependencies with `flutter pub get` and then
 builds an apk and runs the flutter tests in parallel.
 
-```hcl
-workflow "build and test app" {
-  on = "push"
-  resolves = ["build apk", "run tests"]
-}
-
-# Install dependencies
-action "install dependencies" {
-  uses = "steebchen/flutter@master"
-  args = "pub get"
-}
-
-# test app
-action "run tests" {
-  needs = "install dependencies"
-  uses = "steebchen/flutter@master"
-  args = "test"
-}
-
-# Build APK
-action "build apk" {
-  needs = "install dependencies"
-  uses  = "steebchen/flutter@master"
-  args  = "build apk --release"
-}
+`.github/workflows/main.yml:`
+```yml
+on: push
+name: build and test app
+jobs:
+  installDependencies:
+    name: install dependencies
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: install dependencies
+      uses: steebchen/flutter@master
+      with:
+        args: pub get
+    - name: run tests
+      uses: steebchen/flutter@master
+      with:
+        args: test
+    - name: build apk
+      uses: steebchen/flutter@master
+      with:
+        args: build apk --release
 ```
 
 ![github actions preview](./preview.jpg)
