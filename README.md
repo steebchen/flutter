@@ -7,7 +7,7 @@ This action provides `flutter` for Github Actions.
 This example first fetches the dependencies with `flutter pub get` and then
 builds an apk and runs the flutter tests in parallel.
 
-`.github/workflows/main.yml:`
+`.github/workflows/main.yml`
 ```yml
 on: push
 name: build and test app
@@ -16,17 +16,20 @@ jobs:
     name: install dependencies
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v1
+
     - name: install dependencies
-      uses: actions/checkout@master
-      uses: steebchen/flutter@master
+      uses: steebchen/flutter@v1.0.0
       with:
         args: pub get
+
     - name: run tests
-      uses: steebchen/flutter@master
+      uses: steebchen/flutter@v1.0.0
       with:
         args: test
+
     - name: build apk
-      uses: steebchen/flutter@master
+      uses: steebchen/flutter@v1.0.0
       with:
         args: build apk --release
 ```
