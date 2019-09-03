@@ -30,5 +30,3 @@ jobs:
       with:
         args: build apk --release
 ```
-
-![github actions preview](./preview.jpg)
