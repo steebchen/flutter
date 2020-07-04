@@ -1,0 +1,8 @@
+name: 'flutter'
+description: 'The flutter CLI as a GitHub Action'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'terminal'
+  color: 'purple'
