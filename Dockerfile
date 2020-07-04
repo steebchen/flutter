@@ -1,4 +1,4 @@
-FROM gcr.io/cloud-builders/flutter
+FROM steebchen/flutter
 
 LABEL version="1.1.0"
 LABEL name="flutter"
