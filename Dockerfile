@@ -1,6 +1,6 @@
-FROM gableroux/flutter
+FROM gcr.io/cloud-builders/flutter
 
-LABEL version="1.0.0"
+LABEL version="1.1.0"
 LABEL name="flutter"
 LABEL repository="http://github.com/steebchen/flutter"
 LABEL homepage="http://github.com/steebchen/flutter"
