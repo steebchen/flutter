@@ -19,17 +19,17 @@ jobs:
     - uses: actions/checkout@v1
 
     - name: install dependencies
-      uses: steebchen/flutter@v1.0.0
+      uses: steebchen/flutter@v1.1.0
       with:
         args: pub get
 
     - name: run tests
-      uses: steebchen/flutter@v1.0.0
+      uses: steebchen/flutter@v1.1.0
       with:
         args: test
 
     - name: build apk
-      uses: steebchen/flutter@v1.0.0
+      uses: steebchen/flutter@v1.1.0
       with:
         args: build apk --release
 ```
