@@ -2,6 +2,10 @@
 
 This action provides `flutter` for Github Actions.
 
+## NOTE – THIS PACKAGE IS ARCHIVED
+
+Please use https://github.com/subosito/flutter-action instead, which is actively maintained and has more features.
+
 ## Usage examples
 
 This example first fetches the dependencies with `flutter pub get` and then
